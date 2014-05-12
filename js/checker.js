@@ -8,16 +8,12 @@ var junkGroups = [];
 
 // 用 Ajax 自 http://spamgroup.tonyq.org/groups/jsonp 取得垃圾社團列表
 
-$.ajax('http://spamgroup.tonyq.org/groups/jsonp', {
-  dataType: 'jsonp',
-  jsonp: 'jsonp',
-  success: function(data){
+$.getJSON("http://jsbin.com/jaziroja/1", {}, function(data){
     // 將每筆資料的 GID 放進 junkGroups 陣列中。
-    //
-    // ...
-    //   junkGroups.push(data[i].GID);
-    // ...
-    //
+    var i;
+    for(i=0; i<data.length; i++){
+      junkGroups.push(data[i].GID);
+    }
     startButton.removeAttr('disabled').removeClass('disabled');
   }
 });
@@ -25,7 +21,7 @@ $.ajax('http://spamgroup.tonyq.org/groups/jsonp', {
 // 設定 Facebook AppID
 window.fbAsyncInit = function(){
   FB.init({
-    appId: '259195264246285', // 若可以，請換成自己的 App ID !
+    appId: '247671718770439', // 若可以，請換成自己的 App ID !
     status: true
   });
 
