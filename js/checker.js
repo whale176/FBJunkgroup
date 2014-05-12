@@ -15,7 +15,7 @@ $.getJSON("http://jsbin.com/jaziroja/1", {}, function(data){
       junkGroups.push(data[i].GID);
     }
     startButton.removeAttr('disabled').removeClass('disabled');
-  }
+  
 });
 
 // 設定 Facebook AppID
