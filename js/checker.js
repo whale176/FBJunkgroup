@@ -40,7 +40,7 @@ window.fbAsyncInit = function(){
         for(i = 0; i < resp.data.length; i++){
           if(junkGroups.indexOf(resp.data[i].id) !== -1){
             console.log(resp.data[i]);
-            results.append('<tr><td>' + resp.data[i].id + '</tr><td>' + resp.data[i].name + '</td></tr>');
+            results.append('<tr><td>' + resp.data[i].id + '</td><td>' + resp.data[i].name + '</td></tr>');
           }
         }
         // 拿到使用者 group 列表的 response 之後：
