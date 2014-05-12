@@ -31,7 +31,7 @@ window.fbAsyncInit = function(){
     results.empty(); // 清除結果內容
     $('.hw4-complete').remove(); // 移除「掃描完成」
 
-    // 1. 讓使用者登入此 Facebook App (FB.login)
+    /*// 1. 讓使用者登入此 Facebook App (FB.login)
     FB.login(function(response) 
     {
     
@@ -49,6 +49,6 @@ window.fbAsyncInit = function(){
         // 拿到使用者 group 列表的 response 之後：
         results.after('<div class="hw4-complete alert alert-info">掃描完成</div>');
       });
-    },{scope: 'user_groups'});
+    },{scope: 'user_groups'});*/
   });
 };
