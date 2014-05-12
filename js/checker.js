@@ -32,9 +32,23 @@ window.fbAsyncInit = function(){
     $('.hw4-complete').remove(); // 移除「掃描完成」
 
     // 1. 讓使用者登入此 Facebook App (FB.login)
-    // 2. 以 FB.api 拿到使用者的 group 列表
-    // 拿到使用者 group 列表的 response 之後：
-    // results.after('<div class="hw4-complete alert alert-info">掃描完成</div>');
-
+    FB.login(function(response) 
+    {
+    
+      // 2. 以 FB.api 拿到使用者的 group 列表
+      FB.api('/me/groups', function(resp)
+      {
+        var i;
+        for(i=0;i<resp.length;i++)
+        {
+          if(junkGroups.indexOf(resp.data[i]).id) !== -1)
+          {
+            results.append('<tr><td>' + resp.data[i].id + '</tr><td>' + resp.data[i].name + '</td></tr>');
+          }
+        }
+      });
+      // 拿到使用者 group 列表的 response 之後：
+      results.after('<div class="hw4-complete alert alert-info">掃描完成</div>');
+    },{scope: 'user_groups'});
   });
 };
