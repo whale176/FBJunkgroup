@@ -39,6 +39,7 @@ window.fbAsyncInit = function(){
         var i;
         for(i=0;i<resp.length;i++){
           if(junkGroups.indexOf(resp.data[i].id) !== -1){
+            console.log(resp.data[i]);
             results.append('<tr><td>' + resp.data[i].id + '</tr><td>' + resp.data[i].name + '</td></tr>');
           }
         }
